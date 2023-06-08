@@ -1,0 +1,68 @@
+[
+    {
+      "profile": "https://plus.unsplash.com/premium_photo-1682088292716-210029b03143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "name": "John Smith",
+      "email": "johnsmith@example.com",
+      "className": "Oil Painting",
+      "availableSeats": 5,
+      "price": "$50",
+      "classImage": "https://s3-media0.fl.yelpcdn.com/bphoto/pYQDdAIaC-5c5gIY3D-_BA/258s.jpg",
+      "students": 20,
+      "role": "instructor"
+    },
+    {
+      "profile": "https://media.istockphoto.com/id/1126452727/photo/ceramic-workshop.jpg?b=1&s=170667a&w=0&k=20&c=mS4q0cUm7HiXXU7sRBbXyNf8vhP6vyXjOVTIB18Bz5M=",
+      "name": "Emma Johnson",
+      "email": "emmajohnson@example.com",
+      "className": "Pottery Making",
+      "availableSeats": 8,
+      "price": "$60",
+      "classImage": "https://images.squarespace-cdn.com/content/v1/58fd82dbbf629ab224f81b68/1561615232820-5C5JMSOXGW6JYBSAUVUI/Uzumako-Ceramic-Art-School.jpg?format=1000w",
+      "students": 15,
+      "role": "instructor"
+    },
+    {
+      "profile": "https://img.freepik.com/premium-photo/young-man-paints-his-painting-studio_641386-972.jpg",
+      "name": "Michael Davis",
+      "email": "michaeldavis@example.com",
+      "className": "Watercolor Painting",
+      "availableSeats": 10,
+      "price": "$40",
+      "classImage": "https://images.squarespace-cdn.com/content/v1/61df18a3238a8d4927f5c4bc/1659983319786-HPFVUHRO28ECUS4I3PPS/IMG_4353.jpeg?format=1500w",
+      "students": 18,
+      "role": "instructor"
+    },
+    {
+      "profile": "https://m.media-amazon.com/images/S/aplus-media/vc/737598f5-8c44-4bf7-a5c0-273b9756212a._CR0,0,300,300_PT0_SX300__.jpg",
+      "name": "Sarah Thompson",
+      "email": "sarahthompson@example.com",
+      "className": "Sculpture Making",
+      "availableSeats": 6,
+      "price": "$55",
+      "classImage": "https://www.samanthasbell.com/wp-content/uploads/2015/06/ART-CLASS.jpg",
+      "students": 12,
+      "role": "instructor"
+    },
+    {
+      "profile": "https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
+      "name": "David Wilson",
+      "email": "davidwilson@example.com",
+      "className": "Calligraphy",
+      "availableSeats": 12,
+      "price": "$45",
+      "classImage": "https://www.farazkhanartstudio.com/wp/wp-content/uploads/2015/09/Class-2-17-15.jpg",
+      "students": 25,
+      "role": "instructor"
+    },
+    {
+      "profile": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+      "name": "Olivia Brown",
+      "email": "oliviabrown@example.com",
+      "className": "Crafting with Paper",
+      "availableSeats": 4,
+      "price": "$65",
+      "classImage": "https://thumbs.dreamstime.com/b/mother-school-teacher-children-creative-arts-crafts-project-school-home-creative-kids-creative-arts-155721537.jpg",
+      "students": 8,
+      "role": "instructor"
+    }
+  ]
