@@ -31,10 +31,14 @@ async function run() {
         const instructorCollection = client.db('Summer-Camp').collection('instructor');
         const popularClassCollection = client.db('Summer-Camp').collection('Popularclass');
         const classesCollection = client.db('Summer-Camp').collection('classes');
+        const selectedClassCollection = client.db('Summer-Camp').collection('SelectedClasses');
+
+
+
 
         // get all instructor
-        app.get('/instructor', async(req, res) => {
-            
+        app.get('/instructor', async (req, res) => {
+
             const result = await instructorCollection.find().sort({ students: -1 }).limit(6).toArray()
             res.send(result)
         })
@@ -46,8 +50,26 @@ async function run() {
         })
 
         // clesses page
-        app.get('/classes', async(req, res)=>{
+        app.get('/classes', async (req, res) => {
             const result = await classesCollection.find().toArray();
+            res.send(result)
+        })
+
+
+        //get selected class
+        
+        app.get('/selected-class', async(req, res)=>{
+            const email = req.query.email;
+            const query = {studentEmail: email}
+            const result = await selectedClassCollection.find(query).toArray();
+            res.send(result)
+        })
+
+        //post
+        //selected class add 
+        app.post('/selected-classes', async (req, res) => {
+            const classData = req.body;
+            const result = await selectedClassCollection.insertOne(classData);
             res.send(result)
         })
 
