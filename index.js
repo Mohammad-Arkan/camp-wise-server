@@ -30,6 +30,7 @@ async function run() {
 
         const instructorCollection = client.db('Summer-Camp').collection('instructor');
         const popularClassCollection = client.db('Summer-Camp').collection('Popularclass');
+        const classesCollection = client.db('Summer-Camp').collection('classes');
 
         // get all instructor
         app.get('/instructor', async(req, res) => {
@@ -41,6 +42,12 @@ async function run() {
         ///Popular Art and Craft Classes data
         app.get('/popular-class', async (req, res) => {
             const result = await popularClassCollection.find().toArray();
+            res.send(result)
+        })
+
+        // clesses page
+        app.get('/classes', async(req, res)=>{
+            const result = await classesCollection.find().toArray();
             res.send(result)
         })
 
