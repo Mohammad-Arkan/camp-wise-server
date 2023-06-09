@@ -5,7 +5,7 @@
       "email": "johnsmith@example.com",
       "className": "Oil Painting",
       "availableSeats": 5,
-      "price": "$50",
+      "price": 50,
       "classImage": "https://s3-media0.fl.yelpcdn.com/bphoto/pYQDdAIaC-5c5gIY3D-_BA/258s.jpg",
       "students": 20,
       "role": "instructor"
@@ -16,7 +16,7 @@
       "email": "emmajohnson@example.com",
       "className": "Pottery Making",
       "availableSeats": 8,
-      "price": "$60",
+      "price": 60,
       "classImage": "https://images.squarespace-cdn.com/content/v1/58fd82dbbf629ab224f81b68/1561615232820-5C5JMSOXGW6JYBSAUVUI/Uzumako-Ceramic-Art-School.jpg?format=1000w",
       "students": 15,
       "role": "instructor"
@@ -27,7 +27,7 @@
       "email": "michaeldavis@example.com",
       "className": "Watercolor Painting",
       "availableSeats": 10,
-      "price": "$40",
+      "price": 40,
       "classImage": "https://images.squarespace-cdn.com/content/v1/61df18a3238a8d4927f5c4bc/1659983319786-HPFVUHRO28ECUS4I3PPS/IMG_4353.jpeg?format=1500w",
       "students": 18,
       "role": "instructor"
@@ -38,7 +38,7 @@
       "email": "sarahthompson@example.com",
       "className": "Sculpture Making",
       "availableSeats": 6,
-      "price": "$55",
+      "price": 55,
       "classImage": "https://www.samanthasbell.com/wp-content/uploads/2015/06/ART-CLASS.jpg",
       "students": 12,
       "role": "instructor"
@@ -49,7 +49,7 @@
       "email": "davidwilson@example.com",
       "className": "Calligraphy",
       "availableSeats": 12,
-      "price": "$45",
+      "price": 45,
       "classImage": "https://www.farazkhanartstudio.com/wp/wp-content/uploads/2015/09/Class-2-17-15.jpg",
       "students": 25,
       "role": "instructor"
@@ -60,7 +60,7 @@
       "email": "oliviabrown@example.com",
       "className": "Crafting with Paper",
       "availableSeats": 4,
-      "price": "$65",
+      "price": 65,
       "classImage": "https://thumbs.dreamstime.com/b/mother-school-teacher-children-creative-arts-crafts-project-school-home-creative-kids-creative-arts-155721537.jpg",
       "students": 8,
       "role": "instructor"

@@ -28,18 +28,18 @@ async function run() {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
 
-        const userCollection = client.db('Summer-Camp').collection('user');
+        const instructorCollection = client.db('Summer-Camp').collection('instructor');
         const popularClassCollection = client.db('Summer-Camp').collection('Popularclass');
 
-// get all instructor
-        app.get('/instructor', async (req, res) => {
-            const query = {role : {$eq: 'instructor'}}
-            const result = await userCollection.find(query).toArray()
+        // get all instructor
+        app.get('/instructor', async(req, res) => {
+            
+            const result = await instructorCollection.find().sort({ students: -1 }).limit(6).toArray()
             res.send(result)
         })
 
         ///Popular Art and Craft Classes data
-        app.get('/popular-class', async(req, res)=>{
+        app.get('/popular-class', async (req, res) => {
             const result = await popularClassCollection.find().toArray();
             res.send(result)
         })

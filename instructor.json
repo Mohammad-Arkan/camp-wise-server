@@ -1,0 +1,44 @@
+[
+    {
+        "profile": "https://plus.unsplash.com/premium_photo-1682088292716-210029b03143?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "name": "John Smith",
+        "email": "johnsmith@example.com",
+        "className": "Oil Painting",
+        "students": 20
+    },
+    {
+        "profile": "https://media.istockphoto.com/id/1126452727/photo/ceramic-workshop.jpg?b=1&s=170667a&w=0&k=20&c=mS4q0cUm7HiXXU7sRBbXyNf8vhP6vyXjOVTIB18Bz5M=",
+        "name": "Emma Johnson",
+        "email": "emmajohnson@example.com",
+        "className": "Pottery Making",
+        "students": 15
+    },
+    {
+        "profile": "https://img.freepik.com/premium-photo/young-man-paints-his-painting-studio_641386-972.jpg",
+        "name": "Michael Davis",
+        "email": "michaeldavis@example.com",
+        "className": "Watercolor Painting",
+        "students": 18
+    },
+    {
+        "profile": "https://m.media-amazon.com/images/S/aplus-media/vc/737598f5-8c44-4bf7-a5c0-273b9756212a._CR0,0,300,300_PT0_SX300__.jpg",
+        "name": "Sarah Thompson",
+        "email": "sarahthompson@example.com",
+        "className": "Sculpture Making",
+        "students": 12
+    },
+    {
+        "profile": "https://images.unsplash.com/photo-1500048993953-d23a436266cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=869&q=80",
+        "name": "David Wilson",
+        "email": "davidwilson@example.com",
+        "className": "Calligraphy",
+        "students": 25
+    },
+    {
+        "profile": "https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80",
+        "name": "Olivia Brown",
+        "email": "oliviabrown@example.com",
+        "className": "Crafting with Paper",
+        "students": 8
+    }
+]
