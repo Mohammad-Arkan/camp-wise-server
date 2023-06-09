@@ -28,15 +28,21 @@ async function run() {
         // Connect the client to the server	(optional starting in v4.7)
         await client.connect();
 
-        const userCollection = client.db('Summer-Camp').collection('user')
+        const userCollection = client.db('Summer-Camp').collection('user');
+        const popularClassCollection = client.db('Summer-Camp').collection('Popularclass');
 
-
+// get all instructor
         app.get('/instructor', async (req, res) => {
             const query = {role : {$eq: 'instructor'}}
             const result = await userCollection.find(query).toArray()
             res.send(result)
         })
 
+        ///Popular Art and Craft Classes data
+        app.get('/popular-class', async(req, res)=>{
+            const result = await popularClassCollection.find().toArray();
+            res.send(result)
+        })
 
         // Send a ping to confirm a successful connection
         await client.db("admin").command({ ping: 1 });
