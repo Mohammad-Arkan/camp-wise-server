@@ -54,6 +54,7 @@ async function run() {
         const popularClassCollection = client.db('Summer-Camp').collection('Popularclass');
         const classesCollection = client.db('Summer-Camp').collection('classes');
         const selectedClassCollection = client.db('Summer-Camp').collection('SelectedClasses');
+        const paymentCollection = client.db('Summer-Camp').collection('payments');
 
 
 
@@ -117,6 +118,17 @@ async function run() {
             res.send({
                 clientSecret: paymentIntent.client_secret
             })
+        })
+
+        //save payment data
+        app.post('/payments', async(req, res)=>{
+            const payment = req.body;
+            const insertResult = await paymentCollection.insertOne(payment);
+
+            const query = {_id: new ObjectId(payment.selectedClassId)};
+            const deleteResult = await selectedClassCollection.deleteOne(query);
+
+            res.send({insertResult, deleteResult})
         })
 
         //post
