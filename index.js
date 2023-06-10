@@ -121,7 +121,7 @@ async function run() {
         })
 
         //save payment data
-        app.post('/payments', async(req, res)=>{
+        app.post('/payments',verifyJWT, async(req, res)=>{
             const payment = req.body;
             const insertResult = await paymentCollection.insertOne(payment);
 
@@ -132,9 +132,15 @@ async function run() {
             const option = {$inc: {availableSeats: -1}};
             const availableSeatsResult = await classesCollection.updateOne(querySeats, option);
 
-
-
             res.send({insertResult, deleteResult, availableSeatsResult })
+        })
+
+        //get my classes data form payment database
+        app.get('/my-classes',verifyJWT, async(req, res)=>{
+            const email = req.query.email;
+            const query = {email: email};
+            const result = await paymentCollection.find(query).sort({date: -1}).toArray();
+            res.send(result)
         })
 
         //post
