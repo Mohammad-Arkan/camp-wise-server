@@ -128,7 +128,13 @@ async function run() {
             const query = {_id: new ObjectId(payment.selectedClassId)};
             const deleteResult = await selectedClassCollection.deleteOne(query);
 
-            res.send({insertResult, deleteResult})
+            const querySeats = {_id: new ObjectId(payment.classesId)};
+            const option = {$inc: {availableSeats: -1}};
+            const availableSeatsResult = await classesCollection.updateOne(querySeats, option);
+
+
+
+            res.send({insertResult, deleteResult, availableSeatsResult })
         })
 
         //post
