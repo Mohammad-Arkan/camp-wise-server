@@ -32,7 +32,7 @@ const verifyJWT = (req, res, next)=>{
 
 
 
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.oajesmx.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -99,6 +99,15 @@ async function run() {
         app.post('/selected-classes', async (req, res) => {
             const classData = req.body;
             const result = await selectedClassCollection.insertOne(classData);
+            res.send(result)
+        })
+
+        //DELETE
+        //delete selected class
+        app.delete('/selected-classes/:id',verifyJWT, async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: new ObjectId(id)};
+            const result = await selectedClassCollection.deleteOne(query);
             res.send(result)
         })
 
