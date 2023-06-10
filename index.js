@@ -94,6 +94,14 @@ async function run() {
             res.send(result)
         })
 
+        //get payment class
+        app.get('/payment/:id',verifyJWT, async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: new ObjectId(id)};
+            const result = await selectedClassCollection.findOne(query);
+            res.send(result)
+        })
+
         //post
         //selected class add 
         app.post('/selected-classes', async (req, res) => {
