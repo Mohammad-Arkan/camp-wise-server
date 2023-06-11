@@ -80,7 +80,7 @@ async function run() {
             const query = {email: email};
             const user = await userCollection.findOne(query);
             if(user.role !== 'instructor'){
-                return res.status(403).send({error: true, message: 'forbidden access'})
+                return res.status(400).send({error: true, message: 'forbidden access'})
             }
             next()
         }
@@ -100,7 +100,7 @@ async function run() {
 
 
         //get instructor
-        app.get('/user/instructor/:email', verifyJWT, verifyInsructor, async(req, res)=>{
+        app.get('/user/instructor/:email', verifyJWT, async(req, res)=>{
             const email = req.params.email;
             const query = {email: email};
             const user = await userCollection.findOne(query);
