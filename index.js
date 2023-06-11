@@ -128,9 +128,18 @@ async function run() {
             res.send(result)
         })
 
-        app.post('/add-class',verifyJWT, verifyInsructor, async(req, res)=>{
+        app.post('/instructor/add-class',verifyJWT, verifyInsructor, async(req, res)=>{
             const classData = req.body;
             const result = await classesCollection.insertOne(classData);
+            res.send(result)
+        })
+
+        // get instructor class
+        app.get('/instructor/my-classes',verifyJWT, verifyInsructor, async(req, res)=>{
+            const email = req.query.email;
+            const query = {email: email};
+            const result = await classesCollection.find(query).toArray();
+            
             res.send(result)
         })
 
