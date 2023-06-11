@@ -162,6 +162,17 @@ async function run() {
         })
 
 
+        //ADMIN     related api
+        app.get('/admin/:email', verifyJWT, async(req, res)=>{
+            const email = req.params.email;
+            const query = {email: email};
+            const user = await userCollection.findOne(query);
+
+            const result = {admin: user?.role === 'admin'};
+            res.send(result)
+        })
+
+
         //get selected class
 
         app.get('/selected-class', async (req, res) => {
