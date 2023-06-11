@@ -80,7 +80,7 @@ async function run() {
             const query = {email: email};
             const user = await userCollection.findOne(query);
             if(user.role !== 'instructor'){
-                return res.status(400).send({error: true, message: 'forbidden access'})
+                return res.status(403).send({error: true, message: 'forbidden access'})
             }
             next()
         }
@@ -107,6 +107,24 @@ async function run() {
 
             const result ={instructor: user?.role === 'instructor'}
             res.send(result)
+        })
+
+        // update class data 
+        app.patch('/instructor/update-class/:id',verifyJWT, verifyInsructor, async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: new ObjectId(id)};
+            const classData = req.body;
+            const updateDoc = {
+                $set: {
+                    className: classData.className,
+                    availableSeats: classData.availableSeats,
+                    price: classData.price
+                }
+            }
+        
+            const result = await classesCollection.updateOne(query, updateDoc)
+            res.send(result)
+
         })
 
         // get all instructor
