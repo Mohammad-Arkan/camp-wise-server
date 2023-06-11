@@ -129,7 +129,7 @@ async function run() {
             const deleteResult = await selectedClassCollection.deleteOne(query);
 
             const querySeats = {_id: new ObjectId(payment.classesId)};
-            const option = {$inc: {availableSeats: -1}};
+            const option = {$inc: {availableSeats: -1, students: 1}};
             const availableSeatsResult = await classesCollection.updateOne(querySeats, option);
 
             res.send({insertResult, deleteResult, availableSeatsResult })
