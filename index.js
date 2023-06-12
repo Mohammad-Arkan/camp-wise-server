@@ -131,7 +131,8 @@ async function run() {
                 $set: {
                     className: classData.className,
                     availableSeats: classData.availableSeats,
-                    price: classData.price
+                    price: classData.price,
+                    status: 'pending'
                 }
             }
         
@@ -202,7 +203,7 @@ async function run() {
         app.put('/update-class-status/:id', verifyJWT, verifyAdmin, async(req, res)=>{
             const id = req.params.id;
             const query = {_id: new ObjectId(id)};
-            const updateDoc = {$set: {status: 'approved'}}
+            const updateDoc = {$set: {status: 'approved', feedBack: ''}}
             const result = await classesCollection.updateOne(query, updateDoc);
             res.send(result)
         })
