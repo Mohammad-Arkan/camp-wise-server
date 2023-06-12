@@ -187,11 +187,21 @@ async function run() {
         })
 
         //get all classes
-        app.get('/admin/all-classes',verifyJWT, async (req, res) => {
-            const query = {status: 'approved'};
-            const result = await classesCollection.find(query).toArray();
+        app.get('/all-classes',verifyJWT, verifyAdmin, async (req, res) => {
+            const result = await classesCollection.find().toArray();
             res.send(result)
         })
+
+
+        //approved class by admin
+        app.put('/update-class-status/:id', verifyJWT, verifyAdmin, async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: new ObjectId(id)};
+            const updateDoc = {$set: {status: 'approved'}}
+            const result = await classesCollection.updateOne(query, updateDoc);
+            res.send(result)
+        })
+
 
 
         //get selected class
