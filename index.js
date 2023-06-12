@@ -54,8 +54,6 @@ async function run() {
 
         const userCollection = client.db('Summer-Camp').collection('user');
 
-        const popularClassCollection = client.db('Summer-Camp').collection('Popularclass');
-
         const classesCollection = client.db('Summer-Camp').collection('classes');
 
         const selectedClassCollection = client.db('Summer-Camp').collection('SelectedClasses');
@@ -153,7 +151,7 @@ async function run() {
 
         ///Popular Art and Craft Classes data
         app.get('/popular-class', async (req, res) => {
-            const result = await popularClassCollection.find().toArray();
+            const result = await classesCollection.find().sort({students: -1}).limit(6).toArray();
             res.send(result)
         })
 
