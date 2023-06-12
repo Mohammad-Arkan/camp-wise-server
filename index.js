@@ -192,6 +192,11 @@ async function run() {
             res.send(result)
         })
 
+        app.get('/all-users',verifyJWT,verifyAdmin, async(req, res)=>{
+            const result = await userCollection.find().toArray();
+            res.send(result)
+        })
+
 
         //approved class by admin
         app.put('/update-class-status/:id', verifyJWT, verifyAdmin, async(req, res)=>{
@@ -199,6 +204,23 @@ async function run() {
             const query = {_id: new ObjectId(id)};
             const updateDoc = {$set: {status: 'approved'}}
             const result = await classesCollection.updateOne(query, updateDoc);
+            res.send(result)
+        })
+
+
+        // post decline by addmin
+        app.put('/decline-class/:id', verifyJWT, verifyAdmin, async(req, res)=>{
+            const id = req.params.id;
+            const {feedBack} = req.body;
+            
+            const query = {_id: new ObjectId(id)};
+            const option = {upsert: true};
+            const updateDoc = {$set: {
+                status: 'declined',
+                feedBack: feedBack
+            }}
+
+            const result = await classesCollection.updateOne(query, updateDoc, option);
             res.send(result)
         })
 
