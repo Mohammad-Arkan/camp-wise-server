@@ -226,6 +226,17 @@ async function run() {
         })
 
 
+        //make admin by admin
+        app.put('/make-admin/:id', verifyJWT, verifyAdmin, async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: new ObjectId(id)};
+            const option = {upsert: true};
+            const updateDoc = {$set : {role: 'admin'}} 
+
+            const result = await userCollection.updateOne(query, updateDoc, option);
+            res.send(result)
+        })
+
 
         //get selected class
 
