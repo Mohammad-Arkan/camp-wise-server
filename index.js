@@ -142,7 +142,8 @@ async function run() {
 
         // clesses page
         app.get('/classes', async (req, res) => {
-            const result = await classesCollection.find().toArray();
+            const query = {status: 'approved'};
+            const result = await classesCollection.find(query).toArray();
             res.send(result)
         })
 
