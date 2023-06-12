@@ -238,6 +238,17 @@ async function run() {
         })
 
 
+        //make instructor by admin
+        app.put('/make-instructor/:id', verifyJWT, verifyAdmin, async(req, res)=>{
+            const id = req.params.id;
+            const query = {_id: new ObjectId(id)};
+            const option = {upsert: true};
+            const updateDoc = {$set: {role: 'instructor'}};
+            const result = await userCollection.updateOne(query, updateDoc, option);
+            res.send(result)
+        })
+
+
         //get selected class
 
         app.get('/selected-class', async (req, res) => {
