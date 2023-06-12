@@ -85,6 +85,19 @@ async function run() {
             next()
         }
 
+        //verify admin
+        const verifyAdmin = async(req, res, next)=>{
+            const email = req.decoded.email;
+            const query ={email: email};
+            const user = await userCollection.findOne(query);
+            
+            if(user.role !== 'admin'){
+                return res.status(403).send({error: true, message: 'forbidden access'})
+            }
+
+            next()
+        }
+
 
         //save user 
         app.put('/user/:email', async (req, res) => {
@@ -170,6 +183,13 @@ async function run() {
             const user = await userCollection.findOne(query);
 
             const result = {admin: user?.role === 'admin'};
+            res.send(result)
+        })
+
+        //get all classes
+        app.get('/admin/all-classes',verifyJWT, async (req, res) => {
+            const query = {status: 'approved'};
+            const result = await classesCollection.find(query).toArray();
             res.send(result)
         })
 
