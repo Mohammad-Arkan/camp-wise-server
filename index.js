@@ -188,7 +188,7 @@ async function run() {
 
         //get all classes
         app.get('/all-classes',verifyJWT, verifyAdmin, async (req, res) => {
-            const result = await classesCollection.find().toArray();
+            const result = await classesCollection.find().sort({status: -1}).toArray();
             res.send(result)
         })
 
